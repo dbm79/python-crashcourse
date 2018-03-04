@@ -1,4 +1,4 @@
 pizzas = ['pepperoni', 'classic trio', 'hawaian']
 
 for pizza in pizzas:
-    print(pizza.title()) 
+    print("I like to eat {} pizza!".format(pizza.title()) )
