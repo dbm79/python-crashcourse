@@ -19,10 +19,16 @@ class Car():
 
     def update_mileage(self, miles):
         '''Update the mileage attribute'''
-        self.odometer = miles
+        '''Reject if you try to roll mileage backwards'''
+        if miles >= self.odometer:
+            self.odometer = miles
+        else:
+            print('You cannot roll the miles backwards')
 
 my_new_car = Car('kia', 'sorento', 2017)
 print(my_new_car.get_descriptive_name())
 print(my_new_car.read_odometer())
 my_new_car.update_mileage(15000)
 print(my_new_car.read_odometer())
+
+my_new_car.update_mileage(5000)
