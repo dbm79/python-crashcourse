@@ -25,6 +25,15 @@ class Car():
         else:
             print('You cannot roll the miles backwards')
 
+class ElectricCar(Car):
+    ''' represent a car specifict to electric cars.'''
+    '''uses Car class as parent. '''
+
+    def __init__(self, make, model, year):
+        '''Initialize attributes of parent class Car.'''
+        super().__init__(make, model, year)
+
+
 my_new_car = Car('kia', 'sorento', 2017)
 print(my_new_car.get_descriptive_name())
 print(my_new_car.read_odometer())
@@ -32,3 +41,6 @@ my_new_car.update_mileage(15000)
 print(my_new_car.read_odometer())
 
 my_new_car.update_mileage(5000)
+
+my_tesla = ElectricCar('tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
