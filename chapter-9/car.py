@@ -17,6 +17,12 @@ class Car():
         '''Print the car's mileage.'''
         print('This car has ' + str(self.odometer) + ' miles on it.')
 
+    def update_mileage(self, miles):
+        '''Update the mileage attribute'''
+        self.odometer = miles
+
 my_new_car = Car('kia', 'sorento', 2017)
 print(my_new_car.get_descriptive_name())
+print(my_new_car.read_odometer())
+my_new_car.update_mileage(15000)
 print(my_new_car.read_odometer())
