@@ -6,11 +6,17 @@ class Car():
         self.make = make
         self.model = model
         self.year = year
+        self.odometer = 0
 
     def get_descriptive_name(self):
         '''Return a neatly formated descriptive name.'''
         long_name = str(self.year) + ' ' + self.make + ' ' + self.model
         return long_name.title()
 
+    def read_odometer(self):
+        '''Print the car's mileage.'''
+        print('This car has ' + str(self.odometer) + ' miles on it.')
+
 my_new_car = Car('kia', 'sorento', 2017)
-print(my_new_car.get_descriptive_name()) 
+print(my_new_car.get_descriptive_name())
+print(my_new_car.read_odometer())
