@@ -25,6 +25,18 @@ class Car():
         else:
             print('You cannot roll the miles backwards')
 
+
+class Battery():
+    ''' A Class describing a basic battery.'''
+    def __init__(self, battery_size=70):
+        '''Initialize battery's attributes'''
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        '''Print statement about battery size.'''
+        print('This cat has a ' + str(self.battery_size) + '-Kwh battery.')
+
+
 class ElectricCar(Car):
     ''' represent a car specifict to electric cars.'''
     '''uses Car class as parent. '''
@@ -32,11 +44,7 @@ class ElectricCar(Car):
     def __init__(self, make, model, year):
         '''Initialize attributes of parent class Car.'''
         super().__init__(make, model, year)
-        self.battery_size = 70
-
-    def describe_battery(self):
-        '''Print statement about battery size.'''
-        print('This cat has a ' + str(self.battery_size) + '-Kwh battery.')
+        self.battery = Battery()
 
 
 my_new_car = Car('kia', 'sorento', 2017)
@@ -49,4 +57,4 @@ my_new_car.update_mileage(5000)
 
 my_tesla = ElectricCar('tesla', 'model s', 2016)
 print(my_tesla.get_descriptive_name())
-print(my_tesla.describe_battery())
+print(my_tesla.battery.describe_battery())
