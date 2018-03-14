@@ -32,6 +32,11 @@ class ElectricCar(Car):
     def __init__(self, make, model, year):
         '''Initialize attributes of parent class Car.'''
         super().__init__(make, model, year)
+        self.battery_size = 70
+
+    def describe_battery(self):
+        '''Print statement about battery size.'''
+        print('This cat has a ' + str(self.battery_size) + '-Kwh battery.')
 
 
 my_new_car = Car('kia', 'sorento', 2017)
@@ -44,3 +49,4 @@ my_new_car.update_mileage(5000)
 
 my_tesla = ElectricCar('tesla', 'model s', 2016)
 print(my_tesla.get_descriptive_name())
+print(my_tesla.describe_battery())
