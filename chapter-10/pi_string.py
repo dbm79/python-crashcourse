@@ -5,7 +5,11 @@ with open(filename) as f_obj:
 
 pi_string = ''
 for line in lines:
-    pi_string += line.strip()
+    pi_string += line.rstrip()
 
-print(pi_string[:52] + '...')
-print(len(pi_string))
+birthday = input('What is your birthday mmddyy: ')
+
+if birthday in pi_string:
+    print('Your birthday is in the first million digits of pi.')
+else:
+    print('Your birthday is not in the first million digits of pi.')
