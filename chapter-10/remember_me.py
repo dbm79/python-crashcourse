@@ -1,8 +1,8 @@
 import json
 
 def greet_user():
-    # load the username if it has been sotred previously
-    # otherwise, prompt for the username and store it
+    '''Greet the user by name'''
+    
     filename  = 'username.json'
 
     try:
