@@ -8,10 +8,11 @@ while True:
     walk = RandomWalk()
     walk.fill_walk()
 
-    plt.scatter(walk.x_values, walk.y_values, s=10)
+    point_numbers = list(range(walk.num_points))
+
+    plt.scatter(walk.x_values, walk.y_values, c=point_numbers, cmap=plt.cm.Blues, edgecolors=None, s=15)
     plt.show()
 
     keep_running = input('Make another walk? (y/n) ')
     if keep_running.lower() == 'n':
         break
-        
