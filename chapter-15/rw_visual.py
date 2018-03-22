@@ -10,7 +10,9 @@ while True:
 
     point_numbers = list(range(walk.num_points))
 
-    plt.scatter(walk.x_values, walk.y_values, c=point_numbers, cmap=plt.cm.Blues, edgecolors=None, s=15)
+    plt.scatter(walk.x_values, walk.y_values, c=point_numbers, cmap=plt.cm.Blues, edgecolors='none', s=15)
+    plt.scatter(0, 0, c='green', edgecolors='none', s=100)
+    plt.scatter(walk.x_values[-1], walk.y_values[-1], c='red', edgecolors='none', s=100)
     plt.show()
 
     keep_running = input('Make another walk? (y/n) ')
