@@ -3,7 +3,7 @@ import pygal
 
 # Create a D6 Die
 die_1= Die()
-die_2=Die()
+die_2=Die(10)
 
 #Make some rolls and store them in a list
 results = []
@@ -21,8 +21,8 @@ for value in range(2, max_result+1):
 # Visualize the results
 hist = pygal.Bar()
 
-hist._title = 'Results of rolling two D6 1000 times.'
-hist.x_labels=['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+hist._title = 'Results of rolling a D6 and D10 50000 times.'
+hist.x_labels=['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16']
 hist.x_title='Results'
 hist.y_title='Frequency of Result'
 
