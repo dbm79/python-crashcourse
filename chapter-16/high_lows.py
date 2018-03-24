@@ -11,14 +11,17 @@ with open(filename) as f_obj:
     # Get the highs and lows for the days
     dates, highs, lows = [], [], []
     for row in reader:
-        current_date = datetime.strptime(row[0], "%Y-%m-%d")
-        dates.append(current_date)
 
-        high = int(row[1])
-        highs.append(high)
-
-        low = int(row[2])
-        lows.append(low)
+        try:
+            current_date = datetime.strptime(row[0], "%Y-%m-%d")
+            high = int(row[1])
+            low = int(row[2])
+        except ValueError:
+            print(current_date, 'missing data')
+        else:
+            dates.append(current_date)
+            highs.append(high)
+            lows.append(low)
 
 # Plot data
 fig = plt.figure(dpi=128, figsize=(10, 6))
