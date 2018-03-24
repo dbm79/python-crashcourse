@@ -8,8 +8,8 @@ with open(filename) as f_obj:
     reader = csv.reader(f_obj)
     header_row = next(reader)
 
-    # Get the highs for the days
-    dates, highs = [], []
+    # Get the highs and lows for the days
+    dates, highs, lows = [], [], []
     for row in reader:
         current_date = datetime.strptime(row[0], "%Y-%m-%d")
         dates.append(current_date)
@@ -17,9 +17,13 @@ with open(filename) as f_obj:
         high = int(row[1])
         highs.append(high)
 
+        low = int(row[2])
+        lows.append(low)
+
 # Plot data
 fig = plt.figure(dpi=128, figsize=(10, 6))
 plt.plot(dates, highs, c='red')
+plt.plot(dates, lows, c='blue')
 plt.title('Daily high temperatures, July 2014', fontsize=24)
 plt.xlabel('', fontsize=16)
 fig.autofmt_xdate()
