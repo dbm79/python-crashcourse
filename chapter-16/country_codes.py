@@ -7,5 +7,6 @@ def get_country_code(country_name):
         # Go through the dictionary looking for the country name
         if name == country_name:
             return code
-        else:
-            return "Country Name Not Found!"
+
+    # return none if country name not found
+    return None
