@@ -12,5 +12,9 @@ for pop_dict in pop_data:
     if pop_dict['Year'] == 2010:
         country_name = pop_dict['Country Name']
         population = int(pop_dict['Value'])
+
         code = country_codes.get_country_code(country_name)
-        print(country_name + ': ' + code + '-' + str(population))
+        if code:
+            print(code + ': ' + str(population))
+        else:
+            print('ERROR - ' + country_name)
