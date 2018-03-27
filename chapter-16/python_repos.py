@@ -17,3 +17,8 @@ repo_dict = repo_dicts[0]
 print('\nKeys:', len(repo_dict))
 for key in sorted(repo_dict.keys()):
     print(key)
+
+#Explore select info for first repo
+print('\nSelect information about the first repo.')
+print('Name: ', repo_dict['name'])
+print('Owner: ', repo_dict['owner']['login'])
