@@ -22,3 +22,6 @@ for key in sorted(repo_dict.keys()):
 print('\nSelect information about the first repo.')
 print('Name: ', repo_dict['name'])
 print('Owner: ', repo_dict['owner']['login'])
+print('Stars: ', repo_dict['stargazers_count'])
+print('Repository: ', repo_dict['html_url'])
+print('Description: ', repo_dict['description'])
